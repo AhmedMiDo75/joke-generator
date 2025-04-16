@@ -9,6 +9,8 @@ function generateJokes() {
     if (this.readyState === 4 && this.status === 200) {
       const jokesData = JSON.parse(this.responseText);
       div.innerHTML = jokesData.value;
+    } else {
+      div.textContent = `Something Went Wrong (Not Funny)`;
     }
   };
   xhr.send();
